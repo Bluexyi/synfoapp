@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello{{ controller_name }}!{% endblock %}
+
+{% block body %}
+
+<section class="articles">
+    {% for article in articles %}
+        <artice>
+            <h2>{{ article.title }}</h2>
+            <div class="metadata">Ecrit le {{ article.createdAt | date('d/m/y') }} à  {{ article.createdAt | date('h:i') }} dans la catégorie politique</div>
+            <div class="content">
+                <img src="{{ article.image }}" alt="">
+                {{ article.content | raw }}
+                <a href="" class="btn btn-primary">Lire la suite</a>
+            </div>
+        </artice>
+    {% endfor %}
+</section>
+
+{% endblock %}
